@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+        title First pug
+    body   
+        h1 hello word
+        - var navBarShow = true
+        div(class=navBarShow ? 'nav' : 'none')
+            .nav-itens
+            - const link = "https://pugjs.org/"
+                ul 
+                    li 
+                        a(href=link) home
+                    li about
