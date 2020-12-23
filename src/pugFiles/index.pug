@@ -2,8 +2,10 @@ doctype html
 html
     head
         title First pug
+        link(rel="stylesheet", href="./../css/main.css")
     body   
         h1 hello word
+            a(href="https://github.com/rochedo55/PugSass") link
         - var navBarShow = true
         div(class=navBarShow ? 'nav' : 'none')
             .nav-itens
@@ -12,3 +14,6 @@ html
                     li 
                         a(href=link) home
                     li about
+                    li teste
+        .container
+            p something
