@@ -1,0 +1,12 @@
+@import 'body';
+ 
+
+a{
+    pointer-events: all;
+    cursor: pointer;
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+    color: default;
+}

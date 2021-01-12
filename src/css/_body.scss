@@ -1,0 +1,58 @@
+$text-color: white;
+
+@mixin box-shadow() {
+    box-shadow: 3px 3px 4px 1px rgba( orange,  0.6) ;
+    
+}
+@mixin negrito ($bool) {
+    @if $bool == true {
+        font-weight: bold;
+    }
+}
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body {
+    @extend .flex;
+    background-color: #7159c1;
+    color: $text-color;
+}
+
+.container{
+    @include box-shadow();
+    width: 200px;
+    height: 200px;
+    background-color: white;
+
+    color: white;
+
+    p {
+        color:orange;
+        @include negrito(true);
+        cursor: pointer;
+        &:hover {
+            color: #7159c1;
+        }
+    }
+}
+$colores: pink, red, gray;
+@each $colore in $colores {
+    .#{$colore}-text { color: lighten($colore, 10)};
+    
+}
+$colors: (color1: blue, color2: yellow, color3: black);
+@each $key, $color in $colors {
+    // se o array tem estrutura de chave valor vai precisar do $key para percorrer
+    .#{$color}-text{ color: darken($color,10)};
+    // vai criar .'x'-text para cada value(x) do array
+}
+.repetidor{
+    @for $i from 1 through 5 {
+        // em vez de through posso usar o 'to' sendo o to indo ate o valor-1
+        .text-content#{$i} {
+            font-size: 15px * $i;
+        }
+    }
+}
