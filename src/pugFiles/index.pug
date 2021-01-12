@@ -16,4 +16,12 @@ html
                     li about
                     li teste
         .container
-            p something
+            p something bold
+            - let times = {"Desenvolvedor":"Gabriel Rocha de Souza", "Empresa": "Sinfo"};
+            for n, i in times
+                p= i + ": " + n
+        .repetidor
+            p.text-content1 primeira coisa
+            p.text-content2.red-text segunda coisa
+            p.text-content3 terceira coisa
+            p.text-content4 quarta coisa
